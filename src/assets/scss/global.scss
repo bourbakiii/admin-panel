@@ -19,3 +19,9 @@ body, #app {
 button{
   cursor: pointer;
 }
+
+.page__content{
+    width: 100%;
+    box-shadow: 0 0 10px 1px rgba(black, 0.2);
+    border-radius: 5px;
+}
