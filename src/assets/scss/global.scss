@@ -1,2 +1,21 @@
-*{
+html,
+body, #app {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.non-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+button{
+  cursor: pointer;
 }

@@ -3,7 +3,9 @@
 </template>
 <script setup>
 import BaseLayout from "./layouts/default.vue";
-// import CurrentLayout from "./layouts/default.vue";
+
+let CurrentLayout = null;
 </script>
 <style scoped lang="scss">
+
 </style>

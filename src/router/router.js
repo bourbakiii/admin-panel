@@ -1,43 +1,29 @@
 import {createRouter, createWebHistory} from 'vue-router'
 
-import productRouter from './product.js';
+// import productRouter from './product.js';
 
-console.log('router is:');
-console.log({
-    routes: [
-        {
-            path: '/',
-            name: 'Home',
-            component: import('@/pages/Home.vue')
-        },
-        productRouter
-    ]
-});
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         {
             path: '/',
-            name: 'Home',
-            component: import('@/pages/Home.vue')
+            name: 'First',
+            meta: {transition: 'page-transition'},
+            component: () => import('@/pages/Home.vue')
         },
         {
-
-            path: '/product',
-            name: "Product",
-            children: [{
-                path: 'edit',
-                name: "ProductEdit",
-                component: import('@/pages/Product/Edit.vue')
-            },
-                {
-                    path: 'add',
-                    name: "ProductAdd",
-                    component: import('@/pages/Product/Add.vue')
-                }
-            ]
-        }
+            path: '/second',
+            name: "Second",
+            meta: {transition: 'page-transition-with-partners'},
+            component: () => import('@/pages/Second.vue')
+        },
+        {
+            path: '/third',
+            name: "Third",
+            meta: {transition: 'page-transition'},
+            component: () => import('@/pages/Third.vue')
+        },
     ]
 })
 
