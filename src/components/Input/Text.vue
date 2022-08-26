@@ -1,14 +1,14 @@
 <template>
   <label :for="id" class="input-block input-block_text">
     <span class="input-block__title">{{ title }}</span>
-    <input @input="emit('input', $event.target.value)" type="text" name="null" :id="id"
+    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" type="text" name="null" :id="id"
            v-bind="$props"/>
   </label>
 </template>
 <script setup>
 import {defineProps, defineEmits} from "vue";
 
-defineEmits('input');
+defineEmits(['update:modelValue']);
 defineProps({
   id: {
     required: true,
@@ -26,8 +26,14 @@ defineProps({
     required: false,
     type: String,
     default: null
+  },
+  modelValue: {
+    required: false,
+    type: String,
+    default: null
   }
 })
+
 </script>
 <style lang="scss">
 .input-block {
