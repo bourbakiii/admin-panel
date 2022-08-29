@@ -7,7 +7,6 @@
 </template>
 <style lang="scss">
 .sidebar {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   align-items: center;

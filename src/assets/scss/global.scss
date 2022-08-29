@@ -1,10 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
+
 html,
 body, #app {
   height: 100%;
+  font-family: 'Rubik', sans-serif;
 }
 
 * {
   box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
 }
 
 .non-scrollbar {
@@ -16,12 +20,12 @@ body, #app {
   }
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-.page__content{
-    width: 100%;
-    box-shadow: 0 0 10px 1px rgba(black, 0.2);
-    border-radius: 5px;
+.page__content {
+  width: 100%;
+  box-shadow: 0 0 10px 1px rgba(black, 0.2);
+  border-radius: 5px;
 }

@@ -1,11 +1,13 @@
 <template>
   <label :for="id" class="input-block input-block_text">
-    <span class="input-block__title">{{ title }}</span>
-    <input :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" type="text" name="null" :id="id"
-           v-bind="$props"/>
+    <span v-if="title" class="input-block__title">{{ title }}</span>
+    <InputBase/>
+    <InputBase :value="modelValue" @input="$emit('update:modelValue', $event.target.value)" type="text" :id="id"
+               v-bind="$props.input"/>
   </label>
 </template>
 <script setup>
+import InputBase from "@/components/Input/Base.vue";
 import {defineProps, defineEmits} from "vue";
 
 defineEmits(['update:modelValue']);
@@ -18,19 +20,14 @@ defineProps({
     required: true,
     type: String
   },
-  placeholder: {
-    required: false,
-    type: String
-  },
-  name: {
-    required: false,
-    type: String,
-    default: null
-  },
   modelValue: {
     required: false,
     type: String,
     default: null
+  },
+  input: {
+    required: false,
+    type: Object,
   }
 })
 
