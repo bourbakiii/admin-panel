@@ -8,7 +8,7 @@
 </template>
 <script setup>
 import InputBase from "@/components/Input/Base.vue";
-import {defineProps, defineEmits} from "vue";
+import {defineEmits} from "vue";
 
 defineEmits(['update:modelValue']);
 defineProps({

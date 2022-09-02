@@ -1,15 +1,9 @@
 <template>
-  <div class="sidebar">
-    <router-link class="sidebar__link" to="/">Первая</router-link>
-    <router-link class="sidebar__link" to="/second">Вторая</router-link>
-    <router-link class="sidebar__link" to="/third">Третья</router-link>
+  <div class="sidebar flex al flex-col direction justify-start items-start p-3">
+    <router-link v-for="{name,path} in routesMap" class="sidebar__link" :to="path">{{ name }}</router-link>
   </div>
 </template>
-<style lang="scss">
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-}
-</style>
+<script setup>
+import {routes} from '../router/router.js';
+const routesMap = routes.map(el => ({name: el.name, path: el.path}));
+</script>
