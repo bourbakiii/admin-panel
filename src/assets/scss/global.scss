@@ -16,6 +16,21 @@ body, #app {
   }
 }
 
-button{
+.page {
+  border: 1px solid black;
+  @apply p-3 rounded-[10px];
+
+}
+
+.grid-inputs {
+  @apply grid gap-4 grid-cols-2;
+
+}
+
+button {
   cursor: pointer;
+}
+
+.input-base{
+  @apply bg-amber-200;
 }
