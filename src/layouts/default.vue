@@ -2,7 +2,7 @@
   <div class="layout default-layout">
     <Sidebar class="default-layout__sidebar"/>
     <div class="default-layout__content layout__content">
-      <Navigation/>
+      <Navigation class="default-layout__navigation"/>
       <div class="default-layout__page-wrapper">
         <router-view class="page" v-slot='{ Component, route }'>
           <transition :name="route.meta.transition" mode="out-in">
@@ -36,7 +36,7 @@ import Sidebar from "../components/Sidebar/Index.vue";
     }
 
     &-enter-active, &-leave-active {
-      transition:0.3s;
+      transition: 0.3s;
 
       .page__tabs, .page__content {
         transition: transform 0.3s !important;
@@ -69,6 +69,14 @@ import Sidebar from "../components/Sidebar/Index.vue";
 
   &__sidebar {
     position: sticky;
+    z-index: $z_sidebar;
+  }
+
+  &__navigation {
+    width: calc(100% + 20px);
+    transform: translateX(-20px);
+    padding-left: 20px;
+    z-index: $z_navigation;
   }
 
   &__content {

@@ -15,8 +15,4 @@ import InputBlock from "@/components/InputBlock.vue";
 import {ref} from "vue";
 
 const some_value = ref(null);
-const loggy = value => {
-  console.log("the value is");
-  console.log(value);
-}
 </script>

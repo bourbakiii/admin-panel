@@ -1,10 +1,11 @@
 <template>
-  <div class="sidebar flex flex-col justify-start items-start p-5 rounded-r-xl bg-main text-white transitioned w-full"
-       :class="opened?'max-w-[300px]':'max-w-[80px]'">
+  <div
+      class="sidebar gap-7 box-border flex flex-col justify-start items-start p-5 rounded-r-xl bg-main text-white transitioned max-w-30vw"
+      :class="opened?'w-[240px]':'w-[80px]'">
     <transition name="burger-transition" mode="out-in">
-      <font-awesome-icon @click.prevent="opened=true" v-if="!opened" icon="fa-solid fa-bars"
+      <font-awesome-icon @click.prevent="opened = true" v-if="!opened" icon="fa-solid fa-bars"
                          class="clickable-icon text-4xl"/>
-      <font-awesome-icon @click.prevent="opened=false" v-else icon="fa-solid fa-arrow-left"
+      <font-awesome-icon @click.prevent="opened = false" v-else icon="fa-solid fa-arrow-left"
                          class="clickable-icon text-4xl"/>
     </transition>
     <div class="sidebar__links">
@@ -15,7 +16,6 @@
         <template v-slot:content>{{ name }}</template>
       </SidebarLink>
     </div>
-
   </div>
 </template>
 <script setup>
