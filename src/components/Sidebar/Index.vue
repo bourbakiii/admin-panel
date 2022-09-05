@@ -10,7 +10,7 @@
     <div class="sidebar__links">
       <SidebarLink v-for="{name,path,fa_icon} in routesMap" :to="path">
         <template v-slot:icon>
-          <font-awesome-icon :icon="'fa-solid' + icon"/>
+          <font-awesome-icon :icon="'fa-solid ' + fa_icon"/>
         </template>
         <template v-slot:content>{{ name }}</template>
       </SidebarLink>

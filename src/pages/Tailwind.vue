@@ -7,12 +7,11 @@
           item
         }}
       </InputBlock>
-      <input v-model="some_value" type="text">
     </div>
   </div>
 </template>
 <script setup>
-import InputBlock from "../components/InputBlock.vue";
+import InputBlock from "@/components/InputBlock.vue";
 import {ref} from "vue";
 
 const some_value = ref(null);
