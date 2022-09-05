@@ -2,7 +2,8 @@ html,
 body, #app {
   height: 100%;
 }
-body{
+
+body {
   background-color: $main;
 }
 
@@ -27,3 +28,9 @@ button {
   cursor: pointer;
 }
 
+.unselectable {
+  -moz-user-select: none;
+  -html-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

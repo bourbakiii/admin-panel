@@ -1,10 +1,10 @@
 <template>
   <nav class="navigation">
-    <Switcher v-model="the_variable"/>
+    <Checkbox/>
   </nav>
 </template>
 <script setup>
-import Switcher from "@/components/Switcher.vue"
+import Checkbox from "@/components/Checkbox.vue"
 import {ref} from "vue";
 
 const the_variable = ref(false);
