@@ -1,12 +1,3 @@
 <template>
-  <nav class="navigation">
-  </nav>
+  <nav class="navigation h-[70px] bg-red"></nav>
 </template>
-<script setup>
-</script>
-<style lang="scss">
-.navigation {
-  height: 70px;
-  background-color: rgba(125, 125, 125);
-}
-</style>
