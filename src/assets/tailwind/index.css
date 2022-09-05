@@ -13,3 +13,7 @@
 .input-base {
     @apply bg-black/[.1] rounded min-h-[30px] focus:bg-black/[.2];
 }
+
+.clickable-icon{
+    @apply cursor-pointer;
+}

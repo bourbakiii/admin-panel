@@ -4,6 +4,7 @@ export const routes = [
     {
         path: '/tailwind',
         name: "Tailwind",
+        icon: 'fa-vials',
         meta: {transition: 'page-transition'},
         component: () => import('@/pages/Tailwind.vue')
     },
