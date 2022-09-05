@@ -1,8 +1,11 @@
 <template>
   <nav class="navigation">
-
+    <input type="checkbox" v-model="dark_mode"/>
   </nav>
 </template>
+<script>
+
+</script>
 <style lang="scss">
 .navigation{
   width:100%;

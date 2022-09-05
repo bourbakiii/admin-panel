@@ -1,0 +1,16 @@
+$transition: .3s;
+
+
+:root{
+  --main: rgba(23, 55, 83);
+  --red: rgba(191, 26, 47);
+  --grey: rgba(238, 238, 255);
+  --yellow: rgba(254, 234, 0);
+  --green: rgba(32, 252, 143);
+}
+
+$main: var(--main);
+$red: var(--red);
+$grey: var(--grey);
+$yellow: var(--yellow);
+$green: var(--green);

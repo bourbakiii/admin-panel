@@ -1,0 +1,7 @@
+input, button, a {
+  transition: $transition;
+}
+
+.transitioned{
+  transition: $transition ease;
+}

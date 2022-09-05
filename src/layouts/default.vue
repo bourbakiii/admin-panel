@@ -68,8 +68,7 @@ import Sidebar from "../components/Sidebar.vue";
   flex-direction: row;
 
   &__sidebar {
-    width: 202px;
-    height: 100%;
+    position: sticky;
   }
 
   &__content {
