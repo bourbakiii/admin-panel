@@ -1,16 +1,20 @@
 <template>
-  <label class="flex justify-center items-center label cursor-pointer unselectable">
-    <input v-model="val" type="checkbox" id="killer-checkbox" class="hidden">
+  <label class="flex justify-center items-center label cursor-pointer unselectable" >
+    <input @change="$emit('update:modelValue', $event.target.checked)" type="checkbox"
+           id="killer-checkbox" class="sr-only">
     <transition name="checkbox-transition">
-      <font-awesome-icon class="label__icon" icon="fa-solid fa-check" v-if="val"/>
+      <font-awesome-icon class="label__icon" icon="fa-solid fa-check" v-if="$props.modelValue"/>
     </transition>
   </label>
 </template>
 <script setup>
-import {ref} from "vue";
-
-const val = ref(false);
+defineProps({
+  modelValue: {
+    required: false
+  }
+})
 </script>
+
 <style lang="scss">
 .checkbox-transition {
   @keyframes jump {
@@ -48,6 +52,9 @@ const val = ref(false);
     margin: 0 auto;
     font-size: 15px;
     color: $main;
+  }
+  &:focus-within {
+    border: 1px solid black;
   }
 }
 </style>

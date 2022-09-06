@@ -25,10 +25,7 @@
         after:h-5
         after:w-5
         after:transition-all
-        peer-checked:bg-white/[.3]"></div>
+        peer-checked:bg-black/[.5]"/>
   </label>
 
 </template>
-<script setup>
-const loggy = () => console.log(12312);
-</script>

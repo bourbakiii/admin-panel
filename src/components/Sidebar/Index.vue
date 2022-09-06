@@ -1,13 +1,9 @@
 <template>
   <div
-      class="sidebar gap-7 box-border flex flex-col justify-start items-start p-5 rounded-r-xl bg-main text-white transitioned max-w-30vw"
-      :class="opened?'w-[240px]':'w-[80px]'">
-    <transition name="burger-transition" mode="out-in">
-      <font-awesome-icon @click.prevent="opened = true" v-if="!opened" icon="fa-solid fa-bars"
-                         class="clickable-icon text-4xl"/>
-      <font-awesome-icon @click.prevent="opened = false" v-else icon="fa-solid fa-arrow-left"
-                         class="clickable-icon text-4xl"/>
-    </transition>
+      class="sidebar ease-jump-bezier gap-7 box-border flex flex-col justify-start items-start  bg-main text-white max-w-30vw duration-300 ease-[cubic-bezier(.47,1.64,.41,.8)]"
+      :class="opened?'w-[240px]':'w-[50px]'">
+
+    <button @click="opened=!opened">Switch</button>
     <div class="sidebar__links">
       <SidebarLink v-for="{name,path,fa_icon} in routesMap" :to="path">
         <template v-slot:icon>
@@ -26,16 +22,3 @@ import {ref} from "vue";
 const routesMap = routes.map(el => ({name: el.name, path: el.path, fa_icon: el.icon}));
 const opened = ref(false);
 </script>
-
-<style lang="scss">
-.burger-transition {
-  &-enter-from, &-leave-to {
-    opacity: 0;
-    transform: scale(0)
-  }
-
-  &-enter-active, &-leave-active {
-    transition: .1s;
-  }
-}
-</style>
