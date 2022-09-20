@@ -2,6 +2,13 @@ html,
 body, #app {
   height: 100%;
 }
+body{
+  font-family: Bahnschrift, sans-serif;
+}
 * {
   box-sizing: border-box;
+}
+
+button, a{
+  cursor:pointer;
 }
