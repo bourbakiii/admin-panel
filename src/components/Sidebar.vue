@@ -1,5 +1,5 @@
 <template>
-  <nav class="sidebar" :class="{sidebar_open: props.open}">
+  <nav @click.self="emit('open')" class="sidebar" :class="{sidebar_open: props.open}">
     <router-link to='/' class="sidebar__logotype">
       <img src="@/assets/images/logo-icon.png" alt="Logotype icon" class="sidebar__logotype__icon">
       <img src="@/assets/images/logo-text.png" alt="Logotype text" class="sidebar__logotype__text">
@@ -19,9 +19,15 @@
 </template>
 <script setup>
 import GSAP from 'gsap';
-import {watch, computed} from 'vue';
+import {watch, computed, onMounted} from 'vue';
 import {routes} from '@/router/router.js';
 import {useRoute} from 'vue-router';
+
+
+//////////////////////////////////////////
+onMounted(() => GSAP.fromTo('.sidebar', {transform: 'translateX(-100%)'}, {transform: 'translateX(0px)', delay:1.5}))
+//////////////////////////////////////////
+
 
 const PARSED_ROUTES = computed(() => routes.map(route => ({
   navigation_name: route.navigation_name,
@@ -38,6 +44,7 @@ watch(() => props.open, value => {
   if (value) openSidebarAnimations()
   else closeSidebarAnimations()
 })
+
 const openSidebarAnimations = () => {
   GSAP.to('.sidebar', {width: 300, ease: 'back'});
   GSAP.to('.sidebar__logotype__text', {width: 100, opacity: 1, marginLeft: 10, ease: 'back'})
