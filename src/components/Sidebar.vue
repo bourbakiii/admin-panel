@@ -5,7 +5,6 @@
       <img src="@/assets/images/logo-text.png" alt="Logotype text" class="sidebar__logotype__text">
     </router-link>
     <button @click="toggle">Click me!</button>
-
     <div class="sidebar__links">
       <router-link class="sidebar__link" v-for="(route,index) in PARSED_ROUTES" :key="`sidebar-link-${index}`"
                    :to="route.path">
@@ -22,18 +21,14 @@ import GSAP from 'gsap';
 import {watch, computed, onMounted} from 'vue';
 import {routes} from '@/router/router.js';
 import {useRoute} from 'vue-router';
-
-
 //////////////////////////////////////////
-onMounted(() => GSAP.fromTo('.sidebar', {transform: 'translateX(-100%)'}, {transform: 'translateX(0px)', delay:1.5}))
-//////////////////////////////////////////
-
 
 const PARSED_ROUTES = computed(() => routes.map(route => ({
   navigation_name: route.navigation_name,
   path: route.path,
   icon_name: route.icon_name
 })))
+
 ///////////////////////////////////////////
 const props = defineProps({open: {required: true, default: false}})
 const emit = defineEmits(['close', 'open']);

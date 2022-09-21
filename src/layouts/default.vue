@@ -3,6 +3,7 @@
     <Sidebar class="default-layout__sidebar" @close="closeSidebar" @open="openSidebar" :open="is_sidebar_open"/>
     <div class="default-layout__content">
       <Navigation class="default-layout__navigation"/>
+      <router-view></router-view>
     </div>
   </div>
 </template>
